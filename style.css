@@ -1,16 +1,85 @@
-/* ... Deine bisherigen Styles ... */
-
-/* Fortschrittsbalken Design */
-#progress-container {
-    margin-top: 10px;
+:root {
+    --bg: #1f1f1f; 
+    --panel: #2b2b2b; 
+    --text: #ccccc1; 
+    --green: #6a9955; 
+    --orange: #ce834d; 
+    --yellow: #f19f1b; 
+    --border: #444;
 }
 
-/* WICHTIG: Erzwungene Farben für die Quote */
-.rate-green { color: #6a9955 !important; font-weight: bold; text-shadow: 0 0 5px rgba(106, 153, 85, 0.3); }
-.rate-yellow { color: #f19f1b !important; font-weight: bold; text-shadow: 0 0 5px rgba(241, 159, 27, 0.3); }
-.rate-red { color: #ce834d !important; font-weight: bold; text-shadow: 0 0 5px rgba(206, 131, 77, 0.3); }
+* { box-sizing: border-box; }
 
-/* Sidebar Statistik-Texte */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+    margin: 0; 
+    padding: 10px; 
+    line-height: 1.6;
+}
+
+#app { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    max-width: 1400px; 
+    margin: auto; 
+}
+
+#quiz-container, #sidebar, #error-history-sidebar { 
+    background: var(--panel); 
+    padding: 20px; 
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+}
+
+#error-history-sidebar { flex: 1 1 250px; max-height: 90vh; overflow-y: auto; }
+#quiz-container { flex: 3 1 400px; text-align: center; }
+#sidebar { flex: 1 1 280px; }
+
+#question { font-size: 1.25rem; margin-bottom: 20px; min-height: 3em; color: #fff; }
+
+#options { display: grid; gap: 10px; }
+
+button { 
+    background: #3d3d3d; 
+    color: var(--text); 
+    border: 1px solid #555; 
+    padding: 12px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+    width: 100%; 
+    font-size: 1rem;
+}
+
+button:hover { background: #4d4d4d; border-color: var(--yellow); }
+
+.correct { background: var(--green) !important; color: white; border-color: #fff; }
+.wrong { background: var(--orange) !important; color: white; border-color: #fff; }
+
+#progress-container {
+    width: 100%; 
+    background: #444; 
+    height: 12px; 
+    border-radius: 6px; 
+    margin-bottom: 20px; 
+    overflow: hidden; 
+    border: 1px solid #555;
+}
+
+#progress-bar { 
+    width: 0%; 
+    height: 100%; 
+    background: var(--yellow); 
+    transition: width 0.4s ease; 
+}
+
+.rate-green { color: var(--green) !important; font-weight: bold; }
+.rate-yellow { color: var(--yellow) !important; font-weight: bold; }
+.rate-red { color: var(--orange) !important; font-weight: bold; }
+
 .stat-grid p {
     margin: 8px 0;
     font-size: 0.95rem;
@@ -18,4 +87,32 @@
     justify-content: space-between;
     border-bottom: 1px solid #333;
     padding-bottom: 4px;
+}
+
+.overlay { 
+    position: fixed; 
+    top:0; left:0; 
+    width: 100%; height: 100%; 
+    background: var(--bg); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 100; 
+    padding: 20px; 
+}
+
+.species-box { 
+    background: #333; 
+    border-left: 4px solid var(--yellow); 
+    padding: 8px; 
+    margin: 5px 0; 
+    border-radius: 4px; 
+    font-size: 0.9rem; 
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    #error-history-sidebar, #sidebar { width: 100%; order: 2; }
+    #quiz-container { order: 1; width: 100%; }
 }
