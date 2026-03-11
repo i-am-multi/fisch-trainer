@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fischerprüfung Trainer PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="start-menu" class="overlay">
+    <h1>Fischerprüfung Trainer</h1>
+    <button id="btn-start-exam">Übungsprüfung starten (60 Fragen)</button>
+    <button id="btn-start-all">Kompletten Katalog starten</button>
+    <button id="btn-start-errors">Fehlerliste abarbeiten (<span id="error-count">0</span>)</button>
+</div>
+
+    <div id="app" style="display:none;">
+        <aside id="error-history-sidebar">
+            <h3>Fehlerspeicher</h3>
+            <p class="sidebar-subtext">Session-Fehler</p>
+            <div id="session-error-list"></div>
+        </aside>
+
+<main id="quiz-container">
+    <div id="progress-container" style="width: 100%; background: #444; height: 12px; border-radius: 6px; margin-bottom: 20px; overflow: hidden; border: 1px solid #555;">
+        <div id="progress-bar" style="width: 0%; height: 100%; background: var(--yellow); transition: width 0.4s ease;"></div>
+    </div>
+
+    <h2 id="question">Lade...</h2>
+    <div id="options"></div>
+    <div id="history-container"></div>
+    <div id="species-info-container"></div>
+</main>
+
+        <aside id="sidebar">
+            <h3>Statistik</h3>
+            <div class="stat-grid">
+                <p>Zeit: <span id="timer-display">00:00</span></p>
+                <p>Schnitt: <span id="live-average-display">00:00</span></p>
+                <p>Richtig: <span id="count-correct">0</span></p>
+                <p>Falsch: <span id="count-wrong">0</span></p>
+                <p>Erfolg: <span id="success-rate">100</span>%</p>
+                <p>Offen: <span id="count-remaining">0</span></p>
+            </div>
+            
+            <h3>Bestenliste</h3>
+            <div id="leaderboard"></div>
+            
+            <div class="sidebar-actions">
+                <button onclick="exportErrors()">Export (.txt)</button>
+                <button onclick="location.reload()" class="btn-reset">Neustart</button>
+            </div>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

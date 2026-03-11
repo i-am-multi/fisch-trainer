@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1.001",
+    "question": "Welche ist die artenreichste Gruppe der einheimischen Süßwasserfische?",
+    "options": ["die Gruppe der Lachsartigen (Salmoniden)", "die Gruppe der Barschartigen (Perciden)", "die Gruppe der Karpfenartigen (Cypriniden)"],
+    "answer": "C"
+  },
+  {
+    "id": "1.002",
+    "question": "Welche Aussage ist richtig?",
+    "options": ["Der Sterlet gehört zu den störartigen Fischen.", "Der Steinbeißer gehört zu den barschartigen Fischen.", "Der Perifisch gehört zu den dorschartigen Fischen."],
+    "answer": "A"
+  }
+]

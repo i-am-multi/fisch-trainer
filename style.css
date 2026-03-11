@@ -1,0 +1,21 @@
+/* ... Deine bisherigen Styles ... */
+
+/* Fortschrittsbalken Design */
+#progress-container {
+    margin-top: 10px;
+}
+
+/* WICHTIG: Erzwungene Farben für die Quote */
+.rate-green { color: #6a9955 !important; font-weight: bold; text-shadow: 0 0 5px rgba(106, 153, 85, 0.3); }
+.rate-yellow { color: #f19f1b !important; font-weight: bold; text-shadow: 0 0 5px rgba(241, 159, 27, 0.3); }
+.rate-red { color: #ce834d !important; font-weight: bold; text-shadow: 0 0 5px rgba(206, 131, 77, 0.3); }
+
+/* Sidebar Statistik-Texte */
+.stat-grid p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4px;
+}
